@@ -1,3 +1,4 @@
+-- email var
 DELIMITER $$ 
 CREATE TRIGGER email_trigger
 BEFORE UPDATE ON users
