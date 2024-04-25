@@ -1,3 +1,4 @@
+-- average
 DROP PROCEDURE IF EXISTS ComputeAverageScoreForUser;
 DELIMITER $$
 CREATE PROCEDURE ComputeAverageScoreForUser(
