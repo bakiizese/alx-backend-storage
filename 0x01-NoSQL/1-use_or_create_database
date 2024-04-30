@@ -1,3 +1,2 @@
 // create db
-db.createCollection('my_db')
-use my_db
+use my_db;
