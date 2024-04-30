@@ -3,7 +3,7 @@
 
 
 def list_all(mongo_collection):
-        """ List all documents in Python """
+    """ List all documents in Python """
     documents = mongo_collection.find()
 
     if documents.count() == 0:
