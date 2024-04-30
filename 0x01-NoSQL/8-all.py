@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-'''list all'''
+''' list all '''
 
 
 def list_all(mongo_collection):
-    '''all'''
+    ''' all '''
     documents = mongo_collection.find()
 
     if documents.count() == 0:
