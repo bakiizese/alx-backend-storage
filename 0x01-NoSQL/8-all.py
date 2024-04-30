@@ -6,8 +6,7 @@ def list_all(mongo_collection):
     ''' all '''
     documents = mongo_collection.find()
 
-    ls = list(documents)
-    if len(ls) == 0:
+    if documnets.count() == 0:
         return []
 
     return documents
