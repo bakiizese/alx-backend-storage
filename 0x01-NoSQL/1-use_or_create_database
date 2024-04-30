@@ -1,0 +1,2 @@
+// create db
+db.createCollection('my_db')
