@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-'''all'''
+""" MongoDB Operations with Python using pymongo """
 
 
 def list_all(mongo_collection):
-    '''list all'''
+    """ List all documents in Python """
     documents = mongo_collection.find()
 
     if documents.count() == 0:
