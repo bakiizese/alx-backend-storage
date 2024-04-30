@@ -5,5 +5,5 @@ from pymongo import MongoClient
 
 def schools_by_topic(mongo_collection, topic):
     ''' topics find '''
-    documents = mango_collection.find({"topics": topic})
+    documents = mango_collection.find({"topics": {'$elemMatch': {'$eq': topic}}})
     return [d for d in documents]
