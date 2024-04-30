@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
-''' find '''
+'''Task 11's module.
+'''
 
 
 def schools_by_topic(mongo_collection, topic):
-    ''' topics find '''
-    documents = mango_collection.find({"topics": {'$elemMatch':
-                                      {'$eq': topic}}})
-    return [d for d in documents]
+    '''Returns the list of school having a specific topic.
+    '''
+    topic_filter = {
+        'topics': {
+            '$elemMatch': {
+                '$eq': topic,
+            },
+        },
+    }
+    return [doc for doc in mongo_collection.find(topic_filter)]
