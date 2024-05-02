@@ -13,12 +13,12 @@ def count_requests(method: Callable) -> Callable:
     @wraps(method)
     def wrapper(url):
         ''' wrap '''
-        redis.incr(f"count:{url}")
-        cached = redis.get(f"cached:{url}")
+        rediss.incr(f"count:{url}")
+        cached = rediss.get(f"cached:{url}")
         if cached:
             return cached.decode('utf-8')
         html = method(url)
-        redis.setex(f"cached:{url}", 10, html)
+        rediss.setex(f"cached:{url}", 10, html)
         return html
     return wrapper
 
