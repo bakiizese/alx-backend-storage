@@ -35,7 +35,6 @@ def call_history(method: Callable) -> Callable:
 
 def replay(method: Callable) -> None:
     ''' rs '''
-
     name = method.__qualname__
     cache = redis.Redis()
     calls = cache.get(name).decode("utf-8")
