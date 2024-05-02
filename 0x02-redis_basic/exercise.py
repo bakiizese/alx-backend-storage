@@ -13,6 +13,6 @@ class Cache:
 
     def store(self, data: Union[str, bytes, float, int]) -> str:
         ''' returns str key '''
-        k = str(uuid.uuid4()) 
-        self._redis.set(k, data)
-        return k
+        key = uuid.uuid4()
+        self._redis.set(key, data)
+        return key
