@@ -33,14 +33,8 @@ def call_history(method: Callable) -> Callable:
     return wrapper
 
 
-def replay(method: Callable) -> None:
-    """
-    Replays the history of a function
-    Args:
-        method: The function to be decorated
-    Returns:
-        None
-    """
+def replay(method: Callable):
+    ''' displays history calls '''
     name = method.__qualname__
     cache = redis.Redis()
     calls = cache.get(name).decode("utf-8")
