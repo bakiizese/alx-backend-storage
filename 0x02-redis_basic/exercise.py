@@ -16,6 +16,7 @@ def count_calls(method: Callable) -> Callable:
         return method(self, *args, **kwargs)
     return wrapper
 
+
 def call_history(method: Callable) -> Callable:
     ''' history '''
     key = method.__qualname__
@@ -30,6 +31,7 @@ def call_history(method: Callable) -> Callable:
         return data
 
     return wrapper
+
 
 def replay(method: Callable) -> None:
     ''' replays '''
