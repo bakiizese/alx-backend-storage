@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 ''' web '''
+
 import redis
 from functools import wraps
 import requests
@@ -10,7 +11,7 @@ rediss = redis.Redis()
 
 def count_req(met: Callable) -> Callable:
     ''' counts '''
-    @wraps(method)
+    @wraps(met)
     def wrapper(url):
         ''' wrapper '''
         rediss.incr(f"count:{url}")
@@ -27,5 +28,5 @@ def count_req(met: Callable) -> Callable:
 @count_req
 def get_page(url: str) -> str:
     ''' return count tx '''
-    rq = req.get(url)
+    rq = requests.get(url)
     return rq.text
