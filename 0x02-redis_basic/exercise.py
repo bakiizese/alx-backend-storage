@@ -34,7 +34,7 @@ def call_history(method: Callable) -> Callable:
 
 
 def replay(method: Callable) -> None:
-    ''' replays '''
+    ''' rs '''
 
     name = method.__qualname__
     cache = redis.Redis()
@@ -53,8 +53,8 @@ class Cache:
         self._redis = redis.Redis()
         self._redis.flushdb()
 
-    @call_history
     @count_calls
+    @call_history
     def store(self, data: Union[str, bytes, int, float]) -> str:
         ''' returns str key '''
         key = str(uuid.uuid4())
